@@ -50,13 +50,16 @@ Afterwards enter the following commands to build and install vxwm:
 
 You will need startx utility installed.
 
-Add the following line to your .xinitrc to start vxwm using startx:
+Your .xinitrc should be something like this to start vxwm using startx:
 
+    #!/bin/sh
     exec vxwm
 
 If you want to restart vxwm without losing your session 
-or for hot configuration reload, add something like this to your .xinitrc:
+or for hot configuration reload, add something like this 
+to your .xinitrc should be something like this:
 
+    #!/bin/sh
     vxwm &
     exec sleep infinity
 
