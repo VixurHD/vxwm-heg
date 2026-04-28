@@ -1,5 +1,3 @@
 *.o
-config.h
-modules.h
 vxwm
 *.tar.gz

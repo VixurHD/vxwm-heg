@@ -28,6 +28,7 @@ From this moment, i'll try to comment the code and also make it more readable.
 #include <X11/Xlib.h>
 #include <X11/Xproto.h>
 #include <X11/Xutil.h>
+#include <X11/XF86keysym.h> // Зпголовочный файл с доп клавишами для иксов
 #ifdef XINERAMA
 #include <X11/extensions/Xinerama.h>
 #endif /* XINERAMA */
