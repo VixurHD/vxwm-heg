@@ -1,3 +1,6 @@
+
+# ! This is my configuration for vxwm, it is not a official vxwm repository
+
 # vxwm
 
 vxwm - Versatile X Window Manager for X11 forked from `dwm`.
