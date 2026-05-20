@@ -158,10 +158,10 @@ static const Key keys[] = {
     // brightness
     /* { 0, XF86XK_MonBrightnessUp, spawn, {.v = brupcmd} }, */
     /* { 0, XF86XK_MonBrightnessDown, spawn, {.v = brdowncmd} }, */
-  	{ 0,           XF86XK_MonBrightnessUp,      spawn,         {.v = volupcmd} },
-  	{ 0,           XF86XK_MonBrightnessDown,    spawn,         {.v = voldowncmd} },
-  	{ ShiftMask,   XF86XK_AudioRaiseVolume,     spawn,         {.v = volupfinecmd} },
-  	{ ShiftMask,   XF86XK_AudioLowerVolume,     spawn,         {.v = voldownfinecmd} },
+  	{ 0,           XF86XK_MonBrightnessUp,      spawn,         {.v = briupcmd} },
+  	{ 0,           XF86XK_MonBrightnessDown,    spawn,         {.v = bridowncmd} },
+  	{ ShiftMask,   XF86XK_AudioRaiseVolume,     spawn,         {.v = briupfinecmd} },
+  	{ ShiftMask,   XF86XK_AudioLowerVolume,     spawn,         {.v = bridownfinecmd} },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
