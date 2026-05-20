@@ -117,6 +117,7 @@ static const char *cmenucmd[] = { "sh", "/home/heg/.commenu/commenu.sh", NULL };
 
 static const char *termcmd[]  = { "kitty", NULL };
 
+
 /*
 static const char *volupcmd[]       = { "wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "5%+", "-l", "1.5", NULL }
 static const char *voldowncmd[]     = { "wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "5%-", "-l", "1.5", NULL }
@@ -130,6 +131,14 @@ static const char *volupfinecmd[]     = { "volset", "up",   "1%", NULL };
 static const char *voldownfinecmd[]   = { "volset", "down", "1%", NULL };
 static const char *volmutetogglecmd[] = { "volset", "mute",       NULL };
 
+/* static const char *brupcmd[] = { "brightnessctl", "set", "+5%", NULL }; */
+/* static const char *brdowncmd[] = { "brightnessctl", "set", "5%-", NULL }; */
+static const char *briupcmd[]         = { "briset", "up",   "5%", NULL };
+static const char *bridowncmd[]       = { "briset", "down", "5%", NULL };
+static const char *briupfinecmd[]     = { "briset", "up",   "1%", NULL };
+static const char *bridownfinecmd[]   = { "briset", "down", "1%", NULL };
+
+static const char *transshotcmd[] = { "trans-shot", NULL };
 
 // static const char *rvxcmd[]   = { "exec", "rvx", NULL };
 
@@ -145,6 +154,14 @@ static const Key keys[] = {
   	{ ShiftMask,   XF86XK_AudioLowerVolume,    spawn,          {.v = voldownfinecmd} },
   	{ 0,           XF86XK_AudioMute,           spawn,          {.v = volmutetogglecmd} },
 	//
+    { 0, XK_Print, spawn, SHCMD("scrot -s /tmp/shot.png && xclip -selection clipboard -t image/png -i /tmp/shot.png && rm /tmp/shot.png") },
+    // brightness
+    /* { 0, XF86XK_MonBrightnessUp, spawn, {.v = brupcmd} }, */
+    /* { 0, XF86XK_MonBrightnessDown, spawn, {.v = brdowncmd} }, */
+  	{ 0,           XF86XK_MonBrightnessUp,      spawn,         {.v = volupcmd} },
+  	{ 0,           XF86XK_MonBrightnessDown,    spawn,         {.v = voldowncmd} },
+  	{ ShiftMask,   XF86XK_AudioRaiseVolume,     spawn,         {.v = volupfinecmd} },
+  	{ ShiftMask,   XF86XK_AudioLowerVolume,     spawn,         {.v = voldownfinecmd} },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -157,6 +174,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
 	{ MODKEY,                       XK_c,      spawn,          {.v = cmenucmd } },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
+	{ ALTERNATE_MODKEY,             XK_t,      spawn,          {.v = transshotcmd } },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
